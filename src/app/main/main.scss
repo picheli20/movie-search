@@ -1,31 +1,17 @@
-$search-content-width: 359px;
+section.jumbotron {
+  height: 100%;
+  padding: 0px 30px;
+  background-color: #202020;
+  text-align: center;
 
-.search-content{
-	padding-bottom: 100px;
-	position: relative;
-	font-size: 30px;
-	width: $search-content-width;
-	margin-left: -1 * $search-content-width / 2;
-	left: 50%;
-	input{
-		position: absolute;
-		top: 0;
-		left: 0;
-		background: none;
-		padding-left: 10px;
-		border: none;
-		border-bottom: 2px solid #fff;
-		color: #fff;
+  color: white;
 
-		&:focus{
-			outline-width: 0;
-		}
-	}
+  h1 {
+    font-size: 3em;
+    margin: 0;
+  }
 
-	acme-malarkey{
-		position: absolute;
-		top: 0;
-		left: 0;
-
-	}
+  md-autocomplete{
+      margin-top: 10px;
+  }
 }

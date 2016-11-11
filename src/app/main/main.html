@@ -1,29 +1,21 @@
-<div layout="vertical" layout-fill>
-
-  <md-content>
-
-    <section class="jumbotron">
-
-      <h1>Search for a movie.</h1>
-      <div class="search-content">
-        <acme-malarkey ng-show="main.search.title.length == 0"></acme-malarkey>
-        <input ng-model="main.search.title">
-      </div>
-    </section>
-    
-
-    <div class="techs" layout-align="center">
-      <md-card ng-repeat="awesomeThing in main.awesomeThings | orderBy:'rank'">
-        <md-card-content>
-          <img class="pull-right" ng-src="assets/images/{{ awesomeThing.logo }}" alt="{{ awesomeThing.title }}">
-          <h3 class="md-title">{{ awesomeThing.title }}</h3>
-          <p>{{ awesomeThing.description }}</p>
-        </md-card-content>
-        <div class="md-action-buttons">
-          <md-button ng-href="{{ awesomeThing.url }}">Website</md-button>
-        </div>
-      </md-card>
-    </div>
-  </md-content>
-
-</div>
+<section class="jumbotron" layout="row" layout-align="center center">
+  <div>
+    <h1>{{main.currentPhrase}}</h1>
+    <md-autocomplete 
+      md-selected-item="main.selectedItem"  
+      md-search-text="main.search.title"
+      md-selected-item-change="main.selectedItemChange(item)" 
+      md-items="item in main.querySearch(main.searchText)" 
+      md-item-text="item.name"
+      md-min-length="0" placeholder="Ex.: Star Wars" 
+      md-menu-class="autocomplete-custom-template"
+      md-min-length="3">
+      <md-item-template>
+        <span class="item-title">
+          <img ng-src="{{item.thumbnail}}" alt="Poster of {{item.title}}">
+          <span> {{item.title}} </span>
+        </span>
+      </md-item-template>
+    </md-autocomplete>
+  </div>
+</section>
