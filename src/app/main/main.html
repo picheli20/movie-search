@@ -4,10 +4,10 @@
 
     <section class="jumbotron">
 
+      <h1>Search for a movie.</h1>
       <div class="search-content">
-        
-        <acme-malarkey></acme-malarkey>
-        <input ng-model="user.title">
+        <acme-malarkey ng-show="main.search.title.length == 0"></acme-malarkey>
+        <input ng-model="main.search.title">
       </div>
     </section>
     

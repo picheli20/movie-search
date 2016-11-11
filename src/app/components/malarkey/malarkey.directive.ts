@@ -50,9 +50,9 @@ export class MalarkeyController {
   public movies: any[];
 
 
-  constructor(private $log: angular.ILogService, public malarkey: any) {
-    this.movies = ['The Godfather', 'Fight Club', 'Star Wars'];;
-
+  constructor(private $log: angular.ILogService, public malarkey: any, $log: angular.ILogService) {
+    $log.info('acme-malarkey runningc');
+    this.movies = ['The Godfather', 'Fight Club', 'Star Wars'];
     this.activate();
   }
 

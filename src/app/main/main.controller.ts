@@ -1,38 +1,36 @@
-import { WebDevTecService, ITecThing } from '../components/webDevTec/webDevTec.service';
+import { Movie } from '../components/movie/movie';
+
+
 
 export class MainController {
-  public awesomeThings: ITecThing[];
-  public webDevTec: WebDevTecService;
   public classAnimation: string;
   public creationDate: number;
   public toastr: any;
+  public awesomeThings: any;
+  public search: Movie;
 
   /* @ngInject */
-  constructor ($timeout: angular.ITimeoutService, webDevTec: WebDevTecService, toastr: any) {
-    this.awesomeThings = new Array();
-    this.webDevTec = webDevTec;
+  constructor(toastr: any) {
+    this.awesomeThings = [
+      {
+        'title': 'AngularJS',
+        'url': 'https://angularjs.org/',
+        'description': 'HTML enhanced for web apps!',
+        'logo': 'angular.png'
+      },
+      {
+        'title': 'BrowserSync',
+        'url': 'http://browsersync.io/',
+        'description': 'Time-saving synchronised browser testing.',
+        'logo': 'browsersync.png'
+      }
+    ];
     this.classAnimation = '';
     this.creationDate = 1478888587124;
     this.toastr = toastr;
-    this.activate($timeout);
-  }
 
-
-  /** @ngInject */
-  activate($timeout: angular.ITimeoutService) {
-    this.getWebDevTec();
-
-    $timeout(() => {
-      this.classAnimation = 'rubberBand';
-    }, 4000);
-  }
-
-  showToastr() {
-    this.toastr.info('Fork <a href="https://github.com/Swiip/generator-gulp-angular" target="_blank"><b>generator-gulp-angular</b></a>');
-    this.classAnimation = '';
-  }
-
-  getWebDevTec() {
-    this.awesomeThings = this.webDevTec.tec;
+    this.search = {
+      'title': ''
+    };
   }
 }

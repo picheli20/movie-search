@@ -13,11 +13,7 @@ describe('directive malarkey', () => {
 
   beforeEach(angular.mock.module('movieSearch'));
 
-  beforeEach(inject(($compile: angular.ICompileService, $rootScope: angular.IRootScopeService, githubContributor: GithubContributor, $q: angular.IQService) => {
-    spyOn(githubContributor, 'getContributors').and.callFake(() => {
-      return  $q.when([{}, {}, {}, {}, {}, {}]);
-    });
-
+  beforeEach(inject(($compile: angular.ICompileService, $rootScope: angular.IRootScopeService, $q: angular.IQService) => {
     element = angular.element(`
       <acme-malarkey extra-values="['Poney', 'Monkey']"></acme-malarkey>
     `);
@@ -34,10 +30,10 @@ describe('directive malarkey', () => {
   it('should have isolate scope object with instanciate members', () => {
     expect(malarkeyController).toEqual(jasmine.any(Object));
 
-    expect(malarkeyController.contributors.length).toEqual(6);
+    expect(malarkeyController.movies.length).toEqual(3);
   });
 
   it('should log a info', inject(($log: angular.ILogService) => {
-    expect($log.info.logs).toEqual(jasmine.stringMatching('Activated Contributors View'));
+    expect($log.info.logs).toEqual(jasmine.stringMatching('acme-malarkey running'));
   }));
 });
