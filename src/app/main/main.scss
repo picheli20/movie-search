@@ -1,3 +1,31 @@
+$search-content-width: 359px;
+
 .search-content{
-	sa
+	padding-bottom: 100px;
+	position: relative;
+	font-size: 30px;
+	width: $search-content-width;
+	margin-left: -1 * $search-content-width / 2;
+	left: 50%;
+	input{
+		position: absolute;
+		top: 0;
+		left: 0;
+		background: none;
+		padding-left: 10px;
+		border: none;
+		border-bottom: 2px solid #fff;
+		color: #fff;
+
+		&:focus{
+			outline-width: 0;
+		}
+	}
+
+	acme-malarkey{
+		position: absolute;
+		top: 0;
+		left: 0;
+
+	}
 }

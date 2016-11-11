@@ -63,11 +63,14 @@ md-toolbar.md-default-theme {
   background-color: black;
 }
 
+md-content{
+  width: 100%;
+}
+
 section.jumbotron {
-  height: 300px;
   margin-bottom: 30px;
   padding: 1px 30px;
-  background-color: #5aadbb;
+  background-color: #202020;
   text-align: center;
 
   color: white;
