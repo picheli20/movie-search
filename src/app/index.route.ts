@@ -6,6 +6,12 @@ export function routerConfig($stateProvider: angular.ui.IStateProvider, $urlRout
       templateUrl: 'app/main/main.html',
       controller: 'MainController',
       controllerAs: 'main'
+    })
+    .state('detail', {
+      url: '/detail/:id',
+      templateUrl: 'app/main/main.html',
+      controller: 'MainController',
+      controllerAs: 'main'
     });
 
   $urlRouterProvider.otherwise('/');

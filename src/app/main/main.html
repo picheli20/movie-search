@@ -2,20 +2,22 @@
   <div>
     <h1>{{main.currentPhrase}}</h1>
     <md-autocomplete 
-      md-selected-item="main.selectedItem"  
+      md-selected-item="main.selectedItem.title"  
       md-search-text="main.search.title"
-      md-selected-item-change="main.selectedItemChange(item)" 
-      md-items="item in main.querySearch(main.searchText)" 
+      md-selected-item-change="main.selectItem(item)" 
+      md-items="item in main.querySearch()" 
       md-item-text="item.name"
-      md-min-length="0" placeholder="Ex.: Star Wars" 
+      md-min-length="3" 
+      placeholder="Ex.: Star Wars" 
       md-menu-class="autocomplete-custom-template"
-      md-min-length="3">
-      <md-item-template>
-        <span class="item-title">
-          <img ng-src="{{item.thumbnail}}" alt="Poster of {{item.title}}">
-          <span> {{item.title}} </span>
-        </span>
+      md-input-minlength="3">
+      <md-item-template class="itemAutocomplete">
+        <img ng-src="{{item.thumbnail}}" alt="Poster of {{item.title}}">
+        <span class="item-title">{{item.title}}</span>
       </md-item-template>
+      <md-not-found>
+        No matches found.
+      </md-not-found>
     </md-autocomplete>
   </div>
 </section>

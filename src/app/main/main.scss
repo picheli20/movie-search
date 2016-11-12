@@ -1,17 +1,32 @@
 section.jumbotron {
-  height: 100%;
-  padding: 0px 30px;
-  background-color: #202020;
-  text-align: center;
+    height: 100%;
+    padding: 0px 30px;
+    background-color: #202020;
+    text-align: center;
 
-  color: white;
+    color: white;
 
-  h1 {
-    font-size: 3em;
-    margin: 0;
-  }
+    h1 {
+        font-size: 3em;
+        margin: 0;
+    }
 
-  md-autocomplete{
-      margin-top: 10px;
-  }
+    md-autocomplete{
+        margin-top: 10px;
+    }
+}
+
+.md-virtual-repeat-scroller{
+    li{
+        padding-bottom: 5px;
+    }
+    img{
+        width: 32px;
+        height: 44px;
+    }
+    .item-title{
+        line-height: 32px;
+        position: relative;
+        top: -15px;
+    }
 }
