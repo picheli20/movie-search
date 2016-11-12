@@ -1,0 +1,24 @@
+<div class="search-bar">
+    <md-button class="md-raised" ui-sref="home"><i class="fa fa-arrow-left"></i> Back</md-button>
+    <search></search>
+</div>
+<section class="detail-content">
+    <div class="details">
+        <h1><small>[{{detail.movie.Year}}]</small> {{detail.movie.Title}}</h1>
+        <div class="genre-container">
+            <div ng-repeat="genre in detail.movie.Genre.split(',')" class="genre">
+                {{genre}}
+            </div>
+        </div>
+        <img ng-src="{{detail.movie.Poster}}" alt="Poster {{detail.movie.Title}}">
+        <p>{{detail.movie.imdbRating}} of 10 ({{detail.movie.imdbVotes}} votes)</p>
+        <p>Awards: {{detail.movie.Awards || 'N/A'}}</p>
+        <p>Language: {{detail.movie.Language || 'N/A'}}</p>
+        <p>Country: {{detail.movie.Country || 'N/A'}}</p>
+        <p>Actors: {{detail.movie.Actors}}</p>
+        <p>Writer: {{detail.movie.Writer}}</p>
+        <p>Director: {{detail.movie.Director}}</p>
+        <p>Runtime: {{detail.movie.Runtime}}</p>
+        <p>{{detail.movie.Plot}}</p>
+    </div>
+</section>

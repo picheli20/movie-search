@@ -1,0 +1,9 @@
+// fixing the md-scroll-mask of autocomplete, block totally the screen if onSelect you change the state.
+
+.md-scroll-mask{
+    display: none !important;
+}
+
+body{
+    position: relative !important;
+}

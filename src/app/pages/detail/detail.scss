@@ -1,0 +1,19 @@
+section.detail-content {
+    height: 100%;
+    padding: 0px 30px;
+    text-align: center;
+
+    h1 {
+        font-size: 3em;
+        margin: 0;
+    }
+}
+.search-bar{
+    height: 40px;
+    padding: 10px;
+    background-color: $theme-black;
+    md-autocomplete{
+        width: 500px;
+        float: right;
+    }
+}
