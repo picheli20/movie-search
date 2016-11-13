@@ -28,7 +28,7 @@ export class SearchController {
     }
 
     selectItem(movie: IMovie) {
-        // work around to md-autocomplete remove the .md-scroll-mask layer
+        // fix for md-autocomplete remove the .md-scroll-mask layer
         this.$timeout(() => {
             this.$state.go('detail', { id: movie.id });
         }, 50);
