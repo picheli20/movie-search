@@ -1,4 +1,6 @@
-# movie-search
+# movie-search 
+[![Build Status](https://api.travis-ci.org/picheli20/movie-search.svg?branch=master)](http://travis-ci.org/picheli20/movie-search)
+
 Generated with [generator-gulp-angular](https://github.com/Swiip/generator-gulp-angular).
 
 Simple application to search movie and see details of it. Using two diferents API, 
