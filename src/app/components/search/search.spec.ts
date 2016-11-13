@@ -6,14 +6,15 @@ describe('search ', () => {
   let movieService: MovieService;
   let httpBackend: angular.IHttpBackendService;
   let state: ng.ui.IStateService;
-
+  let $timeout : any;
 
   beforeEach(angular.mock.module('movieSearch'));
 
-  beforeEach(inject(($controller: angular.IControllerService, MovieService: MovieService, $httpBackend: angular.IHttpBackendService) => {
+  beforeEach(inject(($controller: angular.IControllerService, MovieService: MovieService, $httpBackend: angular.IHttpBackendService, $injector : any) => {
     searchController = $controller('SearchController');
     movieService = MovieService;
     httpBackend = $httpBackend;
+    $timeout = $injector.get('$timeout');;
   }));
 
   beforeEach(inject(($state: ng.ui.IStateService) => {
@@ -24,6 +25,7 @@ describe('search ', () => {
     let param = {id : '123'};
     spyOn(state, 'go').and.callThrough();
     searchController.selectItem(param);
+    $timeout.flush();
     expect(state.go).toHaveBeenCalled();
   });
 

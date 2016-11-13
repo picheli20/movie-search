@@ -13,9 +13,9 @@ export function SearchDirective(): angular.IDirective {
 
 /** @ngInject */
 export class SearchController {
-  static $inject = ['MovieService', '$state', '$log'];
+  static $inject = ['MovieService', '$state', '$log', '$timeout'];
     public search: string;
-    constructor(public movieService: MovieService, private $state: ng.ui.IStateService, private $log: angular.ILogService) {
+    constructor(public movieService: MovieService, private $state: ng.ui.IStateService, private $log: angular.ILogService, private $timeout : angular.ITimeoutService) {
         this.search = '';
     }
 
@@ -28,6 +28,9 @@ export class SearchController {
     }
 
     selectItem(movie: IMovie) {
-        this.$state.go('detail', { id: movie.id });
+        // work around to md-autocomplete remove the .md-scroll-mask layer
+        this.$timeout(() => {
+            this.$state.go('detail', { id: movie.id });
+        }, 50);
     }
 }
