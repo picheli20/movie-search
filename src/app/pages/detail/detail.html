@@ -1,24 +1,32 @@
 <div class="search-bar">
-    <md-button class="md-raised" ui-sref="home"><i class="fa fa-arrow-left"></i> Back</md-button>
-    <search></search>
+    <button class="btn btn-default col-xs-4 col-sm-2 col-md-1" ui-sref="home"><i class="fa fa-arrow-left"></i> Back</button>
+    <search class="col-xs-8 col-sm-9 col-sm-offset-1 col-md-5 col-md-offset-6"></search>
+    <div class="clearfix"></div>
 </div>
-<section class="detail-content">
+<section class="detail-content col-md-offset-2 col-md-8">
     <div class="details">
-        <h1><small>[{{detail.movie.Year}}]</small> {{detail.movie.Title}}</h1>
-        <div class="genre-container">
-            <div ng-repeat="genre in detail.movie.Genre.split(',')" class="genre">
-                {{genre}}
-            </div>
-        </div>
-        <img ng-src="{{detail.movie.Poster}}" alt="Poster {{detail.movie.Title}}">
-        <p>{{detail.movie.imdbRating}} of 10 ({{detail.movie.imdbVotes}} votes)</p>
-        <p>Awards: {{detail.movie.Awards || 'N/A'}}</p>
-        <p>Language: {{detail.movie.Language || 'N/A'}}</p>
-        <p>Country: {{detail.movie.Country || 'N/A'}}</p>
-        <p>Actors: {{detail.movie.Actors}}</p>
-        <p>Writer: {{detail.movie.Writer}}</p>
-        <p>Director: {{detail.movie.Director}}</p>
-        <p>Runtime: {{detail.movie.Runtime}}</p>
-        <p>{{detail.movie.Plot}}</p>
+        <md-content class="col-xs-12 detail-header">
+            <h1><small>[{{detail.movie.Year}}]</small> {{detail.movie.Title}}</h1>
+            <p>
+                <span ng-show="detail.movie.Runtime">{{detail.movie.Runtime}} | </span>
+                <span ng-show="detail.movie.Language">{{detail.movie.Language}} | </span>
+                <span ng-show="detail.movie.Country">{{detail.movie.Country}} | </span>
+                <span ng-show="detail.movie.Genre">{{detail.movie.Genre}} | </span>
+                <span>{{detail.movie.imdbRating}}/10 ({{detail.movie.imdbVotes}} votes)</span>
+            </p>
+            <md-divider></md-divider>
+            <p class="description">{{detail.movie.Plot}}</p>
+            <md-divider></md-divider>
+        </md-content>
+        <md-content class="poster col-md-5">
+            <img ng-src="{{detail.movie.Poster}}" class="col-xs-12" alt="Poster {{detail.movie.Title}}">
+        </md-content>
+
+        <md-content class="content col-md-7 text-left">
+            <p><b>Awards: </b> {{detail.movie.Awards || 'N/A'}}</p>
+            <p><b>Actors</b>: {{detail.movie.Actors || 'N/A'}}</p>
+            <p><b>Writer</b>: {{detail.movie.Writer || 'N/A'}}</p>
+            <p><b>Director</b>: {{detail.movie.Director || 'N/A'}}</p>
+        </md-content>
     </div>
 </section>

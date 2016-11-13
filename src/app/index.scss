@@ -49,8 +49,12 @@ $theme-black: #202020;
   font-feature-settings: 'liga';
 }
 
-html {
-  font-family: 'Roboto Slab', serif;
+* {
+  font-family: 'Roboto Slab', serif !important;
+}
+
+.fa{
+  font: normal normal normal 14px/1 FontAwesome !important;
 }
 
 [layout=row] {

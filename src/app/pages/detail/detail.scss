@@ -1,19 +1,29 @@
+.search-bar{
+    padding: 15px;
+    background-color: $theme-black;
+    margin-bottom: 20px;
+    .btn{
+        float: left;
+        margin-top: 3px;
+    }
+    
+    search{
+        //width: calc(100% - 73px);
+        float: left;
+    }
+}
 section.detail-content {
     height: 100%;
     padding: 0px 30px;
     text-align: center;
-
+    .detail-header{
+        padding-bottom: 10px;
+        .description{
+            margin: 10px;
+        }
+    }
     h1 {
         font-size: 3em;
         margin: 0;
-    }
-}
-.search-bar{
-    height: 40px;
-    padding: 10px;
-    background-color: $theme-black;
-    md-autocomplete{
-        width: 500px;
-        float: right;
     }
 }

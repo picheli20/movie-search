@@ -52,6 +52,25 @@ describe('service movieService', () => {
     expect(data[0].title).toBe('300');
   }));
 
+  it('should return a empty array', inject(() => {
+    httpBackend.when('JSONP', movieService.apiMovieList + 'search?q=300&callback=JSON_CALLBACK').respond(200, {
+      'status': 'success',
+      'code': 200,
+      'message': 'ok',
+      'term': '300',
+      'search_url': 'http:\/\/www.imdb.com\/find?q=300&s=all5827801211e1f',
+      'data': {
+        'results': {}
+      }
+    });
+    let data: any;
+    movieService.getMovies('300').then((movie : any) => {
+      data = movie;
+    });
+    httpBackend.flush();
+    expect(data.length).toBe(0);
+  }));
+
   it('should log a error for the list', inject(() => {
     httpBackend.when('JSONP', movieService.apiMovieList + 'search?q=300&callback=JSON_CALLBACK').respond(500);
     movieService.getMovies('300');

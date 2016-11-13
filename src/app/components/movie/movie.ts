@@ -20,7 +20,11 @@ export class MovieService {
   public getMovies(search: string): angular.IPromise<any[]> {
     // the only way to make the get whithout Cross Origin error is with the $http.jsonp
     return this.$http.jsonp(this.apiMovieList + 'search?q=' + encodeURIComponent(search) + '&callback=JSON_CALLBACK').then((response: any): any => {
-        return response.data.data.results.titles;
+        if(response.data.data.results && response.data.data.results.titles){
+          return response.data.data.results.titles;
+        }else{
+          return [];
+        }
       })
       .catch((error: any): any => {
         this.$log.error('XHR Failed for getMovies.\n', error.data);
