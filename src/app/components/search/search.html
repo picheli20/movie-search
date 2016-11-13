@@ -1,6 +1,6 @@
 <md-container>
-    <md-autocomplete md-selected-item="vm.selectedItem.title" md-search-text="vm.search" md-selected-item-change="vm.selectItem(item)"
-        md-items="item in vm.querySearch()" md-item-text="item.name" md-delay="1000" md-min-length="3" placeholder="Type here the movie! Ex.: Star Wars"
+    <md-autocomplete md-selected-item="vm.selectedItem" md-search-text="vm.search" md-selected-item-change="vm.selectItem(item)"
+        md-items="item in vm.querySearch()" md-item-text="item.title" md-delay="1000" md-min-length="3" placeholder="Type here the movie! Ex.: Star Wars"
         md-menu-class="autocomplete-custom-template" md-input-minlength="3">
         <md-item-template class="itemAutocomplete">
             <img ng-src="{{item.thumbnail}}" alt="Poster of {{item.title}}">
