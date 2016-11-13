@@ -6,6 +6,8 @@ Generated with [generator-gulp-angular](https://github.com/Swiip/generator-gulp-
 Simple application to search movie and see details of it. Using two diferents API, 
 http://imdb.wemakesites.net/ for movie search and http://www.omdbapi.com/ to get the movies details
 
+You can check the **demo [here](https://picheli-moviesearch.herokuapp.com/)**
+
 ##Dependencies
 
 To run this project you need to have:
