@@ -8,8 +8,9 @@
 var MainPage = function() {
   this.jumbEl = element(by.css('.jumbotron'));
   this.h1El = this.jumbEl.element(by.css('h1'));
-  this.imgEl = this.jumbEl.element(by.css('img'));
-  this.thumbnailEls = element(by.css('body')).all(by.repeater('awesomeThing in main.awesomeThings'));
+  this.inputEl = this.jumbEl.element(by.css('input'));
+  this.autocompleteSuggestionsEl = this.jumbEl.element(by.css('.md-autocomplete-suggestions'));
+  this.autoCompleteOptionsEls = this.autocompleteSuggestionsEl.element(by.css('li'));
 };
 
 module.exports = new MainPage();

@@ -64,6 +64,7 @@ describe('search ', () => {
     });
     httpBackend.flush();
     expect(data.length).toBe(2);
+    
   }));
 
 });
